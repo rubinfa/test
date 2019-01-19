@@ -93,6 +93,7 @@
                   dct:relation eira:CharacterEncodingScheme;
                   dct:relation eira:SyntaxEncodingScheme;
                   dct:relation eira:IdentifierScheme;
+                  dct:relation eira:DataSyntax;
                   dct:relation eira:CoreDataModel .
                   
 :DATASET-00000004 rdf:type owl:NamedIndividual ,
