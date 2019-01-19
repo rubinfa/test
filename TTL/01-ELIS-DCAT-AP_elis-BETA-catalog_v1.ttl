@@ -1,0 +1,771 @@
+@prefix : <https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <https://joinup.ec.europa.eu/node/69559#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dom: <https://joinup.ec.europa.eu/collection/elis/1.0.0/refdata/elisinteroperabilityspecificationdomaintype#> .
+@prefix mime: <https://joinup.ec.europa.eu/collection/elis/1.0.0/refdata/mimetype#> .
+@prefix eira: <http://data.europa.eu/dr8/> .
+@prefix cissv-ap: <https://joinup.ec.europa.eu/collection/elis/1.0.0/refdata/cissv-ap#> .
+@base <https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis#> .
+
+<https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis#> rdf:type owl:Ontology ;
+                                                                    owl:versionIRI <https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis> ;
+                                                                    owl:imports <http://data.europa.eu/dr8/1.0.0/eira> ;
+                                                                    dct:creator "European Commission, DIGIT, ISA2 Programme"@en ;
+                                                                    skos:definition "EIRA Library of Interoperabiolity Specifications"@en ;
+                                                                    dct:modified "2018-11-02"^^xsd:date ;
+                                                                    skos:prefLabel "ELIS Catalogue"@en .
+
+:ELIS-CATALOG-v01 rdf:type owl:NamedIndividual ,
+                   dcat:Catalog ;
+                   dct:description "EIRA Library of Interoperability Specifications" ;
+                   dct:hasVersion "0.1" ;
+                   dct:issued "2018-10-31"^^xsd:date ;
+                   dct:license "ISAProductLicenseV1.3" ;
+                   dct:modified "2018-10-31"^^xsd:date ;
+                   dct:publisher "European Commission, DIGIT, ISA2 Programme"@en ;
+                   dct:title "ELIS"@en ;
+                   skos:note "(dct:issued) The date when the Catalogue was published for the first time."@en ;
+                   dcat:record :CATALOG-ENTRY-0001 .
+
+#ESPD-2.0.2
+
+:CATALOG-ENTRY-0001 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "European Single Procurement Document (ESPD-2.0.2)"@en ;
+                  dct:description "It is used to support interoperability between ESPD services provided all over Europe."@en ,
+                                  "The ESPD Exchange Data Model is the technical representation of the legal European Single Procurement Document."@en ;
+                  dct:issued "2018-11-02"^^xsd:date ;
+                  dct:publisher "European Commission, DG GROW, eProcurement Unit" ;
+                  foaf:primaryTopic :DATASET-00000001 ;
+                  skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .
+
+:DATASET-00000001 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://github.com/ESPD/ESPD-EDM/tree/2.0.2" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "European Single Procurement Document v2.0.2"@en ;
+                  dct:description "The ESPD Exchange Data Model is the technical representation of the legal European Single Procurement Document. It is used to support interoperability between ESPD services provided all over Europe."@en ;
+                  dct:issued "2018-05-17"^^xsd:date ;
+                  dct:theme dom:EPROCUREMENT ;
+                  dct:relation :DATASET-00000002 ,
+                               :DATASET-00000003 ;        
+                  owl:versionInfo "2.0.2" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://github.com/ESPD/ESPD-EDM/tree/2.0.2" ;
+                  dct:publisher [foaf:name "European Commission" ] ;
+                  dct:modified "2018-05-17"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000001 .
+                                      
+:DISTRIBUTION-00000001 rdf:type owl:NamedIndividual ,
+				          dcat:Distribution ;
+				          dcat:accessURL "https://github.com/ESPD/ESPD-EDM/tree/2.0.2" ;
+                  dcat:downloadURL "https://github.com/ESPD/ESPD-EDM/tree/2.0.2/docs/src/main/asciidoc/dist" ;
+                  dct:format mime:HTML .
+
+:DISTRIBUTION-00000002 rdf:type owl:NamedIndividual ,
+				          dcat:Distribution ;
+				          dcat:accessURL "http://docs.oasis-open.org/ubl/UBL-2.2.html" ;
+                  dcat:downloadURL "http://docs.oasis-open.org/ubl/os-UBL-2.2/UBL-2.2.zip" ;
+                  dct:format mime:HTML .
+                 
+:DATASET-00000002 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000004 .
+                  
+
+:DATASET-00000003 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:SemanticInteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;
+                  dct:relation eira:DataModel;
+                  dct:relation eira:Representation;
+                  dct:relation eira:CharacterEncodingScheme;
+                  dct:relation eira:SyntaxEncodingScheme;
+                  dct:relation eira:IdentifierScheme;
+                  dct:relation eira:CoreDataModel .
+                  
+:DATASET-00000004 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000001" ;
+                  dct:rdf:type eira:InteroperabilityApplicationProfile ;
+                  dct:title "ESPD-UBL-AP"@en ;
+                  dct:description "Application Profile of the Standard UBL-2.2"@en ;
+                  dcat:distribution :DISTRIBUTION-00000002 ;
+                  dct:relation :DATASET-00000005 ;
+                  owl:versionInfo "2.2" .
+                  
+                  
+:DATASET-00000005 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;                 
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000001" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "UBL-2.2"@en ; 
+                  dct:description "This specification defines the Universal Business Language, version 2.2."@en ;
+                  dcat:distribution :DISTRIBUTION-00000002 .
+
+#e-delivery SMP v1.10
+
+:CATALOG-ENTRY-0002 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "eDelivery Service Metadata Publisher (eDelivery SMP - 1.10)"@en ;
+                  dct:description "It is designed to be used in eDelivery with the Dynamic Sender Profile Enhancement in the eDelivery AS4 Profile [eDelivery AS4], the eDelivery BDXL profile [eDelivery BDXL] and the eDelivery ebCore Party Id profile [eDelivery EBCOREP]."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                  dct:publisher "CAMSS Team"@en ;
+                  foaf:primaryTopic :DATASET-00000006 ;
+                  skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000006 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eDelivery+SMP+-+1.10" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "eDelivery SMP v1.10"@en ;
+                  dct:description "The SMP specification defines an XML-based service metadata data model and a REST binding to retrieve service metadata."@en ;
+                  dct:issued "2018-05-30"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000007 ,
+                               :DATASET-00000008 ;        
+                  owl:versionInfo "1.10" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eDelivery+SMP+-+1.10" ;
+                  dct:publisher [foaf:name "European Commission" ] ;
+                  dct:modified "2018-05-30"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000003 .
+
+:DISTRIBUTION-00000003 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eDelivery+SMP+-+1.10" ;
+                  dcat:downloadURL "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eDelivery+SMP+-+1.10" ;
+                  dct:format mime:HTML .
+
+:DISTRIBUTION-00000004 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/" ;
+                  dcat:downloadURL "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/bdx-smp-v1.0.doc" ;
+                  dct:format mime:DOC ;
+                  dcat:downloadURL "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/bdx-smp-v1.0.html" ;
+                  dct:format mime:HTML ;
+                  dcat:downloadURL "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/bdx-smp-v1.0.pdf" ;
+                  dct:format mime:PDF .
+
+:DATASET-00000007 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000009 .
+
+:DATASET-00000008 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:InteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;
+                  dct:relation eira:MetadataManagementService ;
+                  dct:relation eira:MetadataManagementComponent .
+
+:DATASET-00000009 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;                  
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000002" ;
+                  dct:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "Delivery SMP profile"@en ;
+                  dct:description "The eDelivery SMP (Service Metadata Publisher) profile provides a set of implementation guidelines for the OASIS SMP specification [SMP-v1.0]."@en ;
+                  dcat:distribution :DISTRIBUTION-00000004 ;
+                  dct:relation :DATASET-00000010 ;
+                  owl:versionInfo "1.10" .
+                  
+:DATASET-00000010 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000002" ;
+                  dct:type cissv-ap:Standard ;                  
+                  dct:title "SMP-1.0"@en ; 
+                  dct:description "The SMP specification defines an XML-based service metadata data model and a REST binding to retrieve service metadata, version 1.0."@en ;
+                  dcat:distribution :DISTRIBUTION-00000004 .
+
+#E-ARK Common Specification for Information Packages
+
+:CATALOG-ENTRY-0003 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "E-ARK Common Specification for Information Packages (CSIP)"@en ;
+                  dct:description "The goal of the Common Specification for Information Packages (CSIP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000011 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000011 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://github.com/DILCISBoard/E-ARK-CSIP" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "E-ARK-CSIP"@en ;
+                  dct:description "The goal of the Common Specification for Information Packages (CSIP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations."@en ;
+                  dct:issued "2018-05-14"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000012 ,
+                               :DATASET-00000013 ;        
+                  owl:versionInfo "2.0" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://github.com/DILCISBoard/E-ARK-CSIP" ;
+                  dct:publisher [foaf:name "European Commission" ] ;
+                  dct:modified "2018-05-14"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000005 .
+
+:DISTRIBUTION-00000005 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://github.com/DILCISBoard/E-ARK-CSIP" ;
+                  dcat:downloadURL "https://github.com/DILCISBoard/E-ARK-CSIP/raw/master/specification/pdf/E-ARK-CSIP-2_0_0-draft.pdf" ;
+                  dct:format mime:PDF .
+
+:DISTRIBUTION-00000006 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.iso.org/standard/57284.html" ;
+                  dcat:downloadURL "https://www.iso.org/standard/57284.html" ;
+                  dct:format mime:HTML .
+
+:DISTRIBUTION-00000007 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://public.ccsds.org/Pubs/" ;
+                  dcat:downloadURL "https://public.ccsds.org/Pubs/651x1b1.pdf" ;
+                  dct:format mime:PDF .
+
+:DATASET-00000012 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000014 .
+
+:DATASET-00000013 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:LegalInteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:E-archivingService.
+
+:DATASET-00000014 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000003" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "E-ARK-CSIP"@en ;
+                  dct:description "The goal of the Common Specification for Information Packages (CSIP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations."@en ;
+                  dcat:distribution :DISTRIBUTION-00000005 ;
+                  dct:relation :DATASET-00000015 ,
+                               :DATASET-00000016 ,   
+                               :DATASET-00000025 ;
+                  owl:versionInfo "2.0" .
+
+:DATASET-00000015 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000003" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "ISO 14721:2012"@en ; 
+                  dct:description "Space data and information transfer systems -- Open archival information system (OAIS) -- Reference model."@en ;
+                  dcat:distribution :DISTRIBUTION-00000006 .
+
+:DATASET-00000016 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000003" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "Producer-Archive Interface Specification (PAIS)"@en ; 
+                  dct:description "Standard method for formally defining the digital information objects to be transferred by an information Producer to an Archive and for effectively packaging these objects in the form of Submission Information Packages (SIPs)."@en ;
+                  dcat:distribution :DISTRIBUTION-00000007 .
+
+
+#Content Management Interoperability Services (CMIS) version 1.1
+
+:CATALOG-ENTRY-0004 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "Content Management Interoperability Services (CMIS)"@en ;
+                  dct:description "Content Management Interoperability Services (CMIS) is an open standard that allows different content management systems to inter-operate over the Internet."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000017 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000017 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "http://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "CMIS-v1.1"@en ;
+                  dct:description "Content Management Interoperability Services (CMIS) is an open standard that allows different content management systems to inter-operate over the Internet."@en ;
+                  dct:issued "2015-09-19"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000018 ,
+                               :DATASET-00000019 ;        
+                  owl:versionInfo "1.1" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "http://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html" ;
+                  dct:publisher [foaf:name "OASIS" ] ;
+                  dct:modified "2015-09-19"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000008 .
+
+:DISTRIBUTION-00000008 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "http://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html" ;
+                  dcat:downloadURL "http://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html" ;
+                  dct:format mime:HTML .
+
+:DISTRIBUTION-00000009 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/soap12/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/soap12/" ;
+                  dct:format mime:HTML .
+
+:DATASET-00000018 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000020 .
+
+:DATASET-00000019 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:OrganisationalInteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:ContentManagementService ,
+                             :ContentManagementComponent .
+
+:DATASET-00000020 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000004" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "CMIS-v1.1"@en ;
+                  dct:description "Content Management Interoperability Services (CMIS) is an open standard that allows different content management systems to inter-operate over the Internet."@en ;
+                  dcat:distribution :DISTRIBUTION-00000008 ;
+                  dct:relation :DATASET-00000021 ;
+                  owl:versionInfo "1.1" .
+                  
+:DATASET-00000021 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000004" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "SOAP"@en ; 
+                  dct:description "SOAP is a lightweight protocol intended for exchanging structured information in a decentralized, distributed environment."@en ;
+                  dcat:distribution :DISTRIBUTION-00000009 .
+
+#Xforms 2.0
+
+:CATALOG-ENTRY-0005 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "XForms"@en ;
+                  dct:description "Specification used  by a forms management system allowing the creation, distribution and analysis of online surveys."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000022 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000022 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://www.w3.org/TR/xforms20/" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "Xforms-v2.0"@en ;
+                  dct:description "Specification used by a forms management system allowing the creation, distribution and analysis of online surveys."@en ;
+                  dct:issued "2012-08-07"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000023 ,
+                               :DATASET-00000024 ;        
+                  owl:versionInfo "2.0" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://www.w3.org/TR/xforms20/" ;
+                  dct:publisher [foaf:name "W3C" ] ;
+                  dct:modified "2012-08-07"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000010 .
+
+:DISTRIBUTION-00000010 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/xforms20/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/xforms20/" ;
+                  dct:format mime:HTML .
+
+:DISTRIBUTION-00000011 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/xml/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/xml/" ;
+                  dct:format mime:HTML .
+
+:DATASET-00000023 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000025 .
+
+:DATASET-00000024 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:InteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:FormsManagementService ,
+                             :FormsManagementComponent .
+
+:DATASET-00000025 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000005" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "Xforms-v2.0"@en ;
+                  dct:description "Specification used by a forms management system allowing the creation, distribution and analysis of online surveys."@en ;
+                  dcat:distribution :DISTRIBUTION-00000010 ;
+                  dct:relation :DATASET-00000026 ;
+                  owl:versionInfo "2.0" .
+                  
+:DATASET-00000026 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000005" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "XML"@en ; 
+                  dct:description "XML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."@en ;
+                  dcat:distribution :DISTRIBUTION-00000011 .
+#DCAT-AP
+
+:CATALOG-ENTRY-0006 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title " DCAT Application profile for data portals in Europe (DCAT-AP)"@en ;
+                  dct:description "Vocabulary used to make data available according to the open data principles, for common use."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000027 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000027 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/solution/dcat-application-profile-data-portals-europe" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "DCAT-AP"@en ;
+                  dct:description "Vocabulary used to make data available according to the open data principles, for common use."@en ;
+                  dct:issued "2018-11-08"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000028 ,
+                               :DATASET-00000029 ;        
+                  owl:versionInfo "1.2" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://joinup.ec.europa.eu/solution/dcat-application-profile-data-portals-europe" ;
+                  dct:publisher [foaf:name "European Commission" ] ;
+                  dct:modified "2018-11-08"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000012 .
+
+:DISTRIBUTION-00000012 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://joinup.ec.europa.eu/release/dcat-ap/12" ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/e143aa9b-df39-4c9f-8ab9-f8be2f3912de/DCAT_AP_1.2.odt" ;
+                  dct:format mime:ODT ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/622bda20-be57-4cf0-a137-8c94ebe34a05/dcat-ap_1.2.json" ;
+                  dct:format mime:JSON ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/1963a284-1ac5-45ea-9245-ca211a685207/dcat-ap_1.2.eap" ;
+                  dct:format mime:EAP ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/90b35f69-9efb-45dc-90b2-c0a661a801cf/DCAT-AP_1.2.png" ;
+                  dct:format mime:PNG ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/014bde52-eb3c-4060-8c3c-fcd0dfc07a8a/DCAT_AP_1.2.pdf" ;
+                  dct:format mime:PDF ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/df8af6c9-2790-4cab-b668-0843e690999a/DCAT_AP_1.2.docx" ;
+                  dct:format mime:DOCX ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/77e42736-303e-4d0f-a85f-92df59b0a8a6/dcat-ap_1.2.rdf" ;
+                  dct:format mime:RDF ;
+                  dcat:downloadURL "https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2018-11/4c7a7c87-a235-41b3-bd46-7992816ae338/dcat-ap_1.2_shacl.zip" ;
+                  dct:format mime:ZIP ;
+                  dcat:downloadURL "https://github.com/SEMICeu/DCAT-AP/blob/master/releases/1.2/DCAT-AP_1.2.svg" ;
+                  dct:format mime:SVG .
+
+:DISTRIBUTION-00000013 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/vocab-dcat/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/vocab-dcat/" ;
+                  dct:format mime:HTML .
+
+:DATASET-00000028 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000030 .
+
+:DATASET-00000029 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:TechnicalInteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:DataPublicationService,
+                               eira:DataPublicationComponent .
+
+:DATASET-00000030 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000006" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "DCAT-AP"@en ;
+                  dct:description "Vocabulary used to make data available according to the open data principles, for common use."@en ;
+                  dcat:distribution :DISTRIBUTION-00000012 ;
+                  dct:relation :DATASET-00000031,
+                               :DATASET-00000035 ;
+                  owl:versionInfo "1.2" .
+                  
+:DATASET-00000031 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000006" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "DCAT"@en ; 
+                  dct:description "Vocabulary used to make data available according to the open data principles, for common use."@en ;
+                  dcat:distribution :DISTRIBUTION-00000013 .
+
+#CADES
+
+:CATALOG-ENTRY-0007 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "CMS Advanced electronic Signature Baseline Profile (CAdES)"@en ;
+                  dct:description "Technical interoperability specification to ensure that electronic signatures can be created and validated anywhere in Europe, the eIDAS Regulation, through Implementing Decision 2015/1506/EU, has defined a number of baseline profiles. The baseline profile of CAdES is one of them."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000032 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000032 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/e-Signature+standards#e-Signaturestandards-CAdES(CMSAdvancedElectronicSignature)BaselineProfile" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "CAdES"@en ;
+                  dct:description "Technical interoperability specification to ensure that electronic signatures can be created and validated anywhere in Europe, the eIDAS Regulation, through Implementing Decision 2015/1506/EU, has defined a number of baseline profiles. The baseline profile of CAdES is one of them."@en ;
+                  dct:issued "2016-08-04"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000033 ,
+                               :DATASET-00000034 ;        
+                  owl:versionInfo "2.1.0" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/e-Signature+standards#e-Signaturestandards-CAdES(CMSAdvancedElectronicSignature)BaselineProfile" ;
+                  dct:publisher [foaf:name "European Commission" ] ;
+                  dct:modified "2016-08-04"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000014 .
+
+:DISTRIBUTION-00000014 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/e-Signature+standards#e-Signaturestandards-CAdES(CMSAdvancedElectronicSignature)BaselineProfile" ;
+                  dcat:downloadURL "https://www.etsi.org/deliver/etsi_ts/103100_103199/103173/02.01.01_60/ts_103173v020101p.pdf" ;
+                  dct:format mime:PDF .
+
+:DISTRIBUTION-00000015 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://tools.ietf.org/html/rfc5652" ;
+                  dcat:downloadURL "https://tools.ietf.org/html/rfc5652" ;
+                  dct:format mime:HTML ;
+                  dcat:downloadURL "https://tools.ietf.org/pdf/rfc5652.pdf" ;
+                  dct:format mime:PDF ;
+                  dcat:downloadURL "https://tools.ietf.org/pdf/rfc5652.txt" ;
+                  dct:format mime:TXT .
+
+:DATASET-00000033 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000035 .
+
+:DATASET-00000034 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:InteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:E-signatureCreationService ,
+                             eira:E-signatureVerificationAndValidationService ,
+                             eira:E-sealCreationService ,
+                             eira:E-sealVerificationAndValidationService .
+
+:DATASET-00000035 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000007" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "CAdES"@en ;
+                  dct:description "Technical interoperability specification to ensure that electronic signatures can be created and validated anywhere in Europe, the eIDAS Regulation, through Implementing Decision 2015/1506/EU, has defined a number of baseline profiles. The baseline profile of CAdES is one of them."@en ;
+                  dcat:distribution :DISTRIBUTION-00000014 ;
+                  dct:relation :DATASET-00000036 ;
+                  owl:versionInfo "2.1.0" .
+                  
+:DATASET-00000036 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000007" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "Cryptohraphic Message Syntax (CMS)"@en ; 
+                  dct:description "Standard to digitally sign, digest, authenticate or encrypt any form of digital data."@en ;
+                  dcat:distribution :DISTRIBUTION-00000015 .
+
+#DCAT
+
+:CATALOG-ENTRY-0008 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "Data Catalog Vocabulary (DCAT)"@en ;
+                  dct:description "Vocabulary used to make data available according to the open data principles, for common use."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000037 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000037 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://www.w3.org/TR/vocab-dcat/" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "DCAT"@en ;
+                  dct:description "Vocabulary used to make data available according to the open data principles, for common use."@en ;
+                  dct:issued "2014-01-16"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000028 ,
+                               :DATASET-00000038 ;        
+                  owl:versionInfo "1.0" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://www.w3.org/TR/vocab-dcat/" ;
+                  dct:publisher [foaf:name "W3C" ] ;
+                  dct:modified "2016-08-04"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000013 .
+
+:DISTRIBUTION-00000016 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/" ;
+                  dct:format mime:HTML .
+
+:DATASET-00000038 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:InteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:DataPublicationService ,
+                             eira::DataPublicationComponent ,
+                             eira::E-sealCreationService ,
+                             eira::E-sealVerificationAndValidationService .
+                  
+:DATASET-00000039 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#00000008" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "Resource Description Framework (RDF)"@en ; 
+                  dct:description "RDF is an standard for representing information in the Web"@en ;
+                  dcat:distribution :DISTRIBUTION-00000016 .
+
+#XSLT
+
+:CATALOG-ENTRY-0009 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "XSL Transformations (XSLT), version 3.0"@en ;
+                  dct:description "Specification used for the transformation of data in XML format by data transformation services."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000040 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000040 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://www.w3.org/TR/xslt-30/" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "XSLT"@en ;
+                  dct:description "Specification used for the transformation of data in XML format by data transformation services."@en ;
+                  dct:issued "2017-06-08"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000041 ,
+                               :DATASET-00000042 ;        
+                  owl:versionInfo "3.0" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://www.w3.org/TR/xslt-30/" ;
+                  dct:publisher [foaf:name "W3C" ] ;
+                  dct:modified "2017-06-08"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000017 .
+
+:DISTRIBUTION-00000017 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/xslt-30/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/xslt-30/" ;
+                  dct:format mime:HTML .
+
+:DATASET-00000041 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000043 .
+
+:DATASET-00000042 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:InteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:DataTransformationComponent ,
+                             eira::DataTransformationService .
+
+:DATASET-00000043 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000009" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "XSLT"@en ;
+                  dct:description "Specification used for the transformation of data in XML format by data transformation services."@en ;
+                  dcat:distribution :DISTRIBUTION-00000017 ;
+                  dct:relation :DATASET-00000026 ;
+                  owl:versionInfo "3.0" .
+                  
+#HTML5
+
+:CATALOG-ENTRY-0010 rdf:type owl:NamedIndividual ,
+                  dcat:CatalogRecord ;
+                  dct:title "HyperText Markup Language v5 (HTML5)"@en ;
+                  dct:description "The specification consists of a markup language used for structuring and presenting content on the World Wide Web."@en ;
+                  dct:issued "2019-01-08"^^xsd:date ;
+                        dct:publisher "CAMSS Team"@en ;
+                        foaf:primaryTopic :DATASET-00000044 ;
+                        skos:note "(dct:issued) The date when the Interoperability Specification was included in the ELIS Catalogue."@en .           
+
+:DATASET-00000044 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://www.w3.org/TR/html5/" ;
+                  dct:type cissv-ap:InteroperabilitySpecification ;
+                  dct:title "HTML5"@en ;
+                  dct:description "The specification consists of a markup language used for structuring and presenting content on the World Wide Web."@en ;
+                  dct:issued "2017-12-14"^^xsd:date ;
+                  dct:theme dom:DOMAINAGNOSTIC ;
+                  dct:relation :DATASET-00000045 ,
+                               :DATASET-00000046 ;        
+                  owl:versionInfo "5.2" ;
+                  skos:note "(dct:issued) The date when the Dataset was released by its publisher."@en ;
+                  dcat:landingPage "https://www.w3.org/TR/html5/" ;
+                  dct:publisher [foaf:name "W3C" ] ;
+                  dct:modified "2017-12-14"^^xsd:date ;
+                  dcat:distribution :DISTRIBUTION-00000018 .
+
+:DISTRIBUTION-00000018 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/html5/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/html5/" ;
+                  dct:format mime:HTML .
+
+:DISTRIBUTION-00000019 rdf:type owl:NamedIndividual ,
+                  dcat:Distribution ;
+                  dcat:accessURL "https://www.w3.org/TR/xhtml11/" ;
+                  dcat:downloadURL "https://www.w3.org/TR/xhtml11/" ;
+                  dct:format mime:HTML .
+
+:DATASET-00000045 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type cissv-ap:InteroperabilitySpecificationConfiguration ;
+                  dct:description "Set of Interoperability Application Profiles of an Interoperability Specification."@en ;
+                  dct:relation :DATASET-00000047 .
+
+:DATASET-00000046 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:type eira:InteroperabilitySpecification ;
+                  dct:title "EIRA Interoperability Specification"@en;
+                  dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;                 
+                  dct:relation eira:DataTransformationComponent ,
+                             eira::DataTransformationService .
+
+:DATASET-00000047 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/interoperabilityapplicationprofile#00000010" ;
+                  dct:rdf:type cissv-ap:InteroperabilityApplicationProfile ;
+                  dct:title "HTML5"@en ;
+                  dct:description "The specification consists of a markup language used for structuring and presenting content on the World Wide Web."@en ;
+                  dcat:distribution :DISTRIBUTION-00000018 ;
+                  dct:relation :DATASET-00000048 ;
+                  owl:versionInfo "5.2" .
+
+:DATASET-00000048 rdf:type owl:NamedIndividual ,
+                  dcat:DataSet ;
+                  dct:identifier "https://joinup.ec.europa.eu/collection/eira/ontology/1.0.0/elis/standard#0000009" ;
+                  dct:type cissv-ap:Standard ;
+                  dct:title "Extensible Hypertext Markup Language (XHTML)"@en ; 
+                  dct:description "XHTML makes HTML more extensible and increase interoperability with other data formats."@en ;
+                  dcat:distribution :DISTRIBUTION-00000019 .

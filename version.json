@@ -1,0 +1,11 @@
+{
+  "name" : "ELIS",
+  "timestamp" : 1547858665614,
+  "version" : "1.0",
+  "eiraVersion" : "3.0.0",
+  "eiraMaxVersion" : "3.0.0",
+  "notes" : "European Library of Interoperability Specifications",
+  "url" : "http://localhost:8079/TES.zip",
+  "md5" : null,
+  "updateUrl" : "http://localhost:8079/version.json"
+}
