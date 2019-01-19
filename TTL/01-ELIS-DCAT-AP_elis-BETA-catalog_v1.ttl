@@ -171,6 +171,7 @@
                   dct:title "EIRA Interoperability Specification"@en;
                   dct:description "An Interoperability Specification is a document containing agreed normative statements for solution building blocks used in an information exchange context. It can refer to existing standards or specifications. "@en ;
                   dct:relation eira:MetadataManagementService ;
+                  dct:relation eira:PublicPolicy ;
                   dct:relation eira:MetadataManagementComponent .
 
 :DATASET-00000009 rdf:type owl:NamedIndividual ,
