@@ -5,7 +5,7 @@
   "eiraVersion" : "3.0.0",
   "eiraMaxVersion" : "3.0.0",
   "notes" : "European Library of Interoperability Specifications",
-  "url" : "http://localhost:8079/TES.zip",
+  "url" : "https://raw.githubusercontent.com/rubinfa/test/master/TTL/01-ELIS-DCAT-AP_elis-BETA-catalog_v1.ttl",
   "md5" : null,
-  "updateUrl" : "http://localhost:8079/version.json"
+  "updateUrl" : "https://raw.githubusercontent.com/rubinfa/test/master/version.json"
 }
