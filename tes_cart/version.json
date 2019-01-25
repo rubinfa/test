@@ -1,0 +1,11 @@
+{
+  "name" : "TES",
+  "timestamp" : 1548445764358,
+  "version" : "2.0",
+  "eiraVersion" : "2.0.0",
+  "eiraMaxVersion" : "2.0.0",
+  "notes" : "2.0.0: notes",
+  "url" : "http://localhost:8079/TES.zip",
+  "updateUrl" : "http://localhost:8079/version.json",
+  "md5" : "efc7df96faf9a82e792c3db5aa66246b"
+}
