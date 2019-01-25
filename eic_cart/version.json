@@ -1,11 +1,11 @@
 {
   "name" : "EIC",
-  "timestamp" : 1548445764343,
+  "timestamp" : 1548446914771,
   "version" : "1.0",
   "eiraVersion" : "3.0.0",
   "eiraMaxVersion" : "3.0.0",
   "notes" : "European Interoperability Cartography",
-  "url" : "http://localhost:8079/EIC.zip",
-  "updateUrl" : "http://localhost:8079/version.json",
-  "md5" : "d2204e2282722244a0ff05a7d0a5a462"
+  "url" : "https://github.com/rubinfa/test/blob/master/eic_cart/EIC.zip?raw=true",
+  "updateUrl" : "https://raw.githubusercontent.com/rubinfa/test/master/eic_cart/version.json",
+  "md5" : "77ac3a660155bcd3388af9e852271848"
 }
