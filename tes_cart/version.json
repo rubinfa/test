@@ -1,11 +1,11 @@
 {
   "name" : "SOLUTIONS",
-  "timestamp" : 1548460970549,
+  "timestamp" : 1548461606395,
   "version" : "2.0",
   "eiraVersion" : "3.0.0",
   "eiraMaxVersion" : "3.0.0",
   "notes" : "TES Library",
-  "url" : "https://github.com/rubinfa/test/blob/master/tes_cart/TES.zip?raw=true",
+  "url" : "https://github.com/rubinfa/test/blob/master/tes_cart/SOLUTIONS.zip?raw=true",
   "updateUrl" : "https://raw.githubusercontent.com/rubinfa/test/master/tes_cart/version.json",
-  "md5" : "36555244c566bdad23a4110fb48cfb1a"
+  "md5" : "af716b6aa54e05dedb3bcb10a2136394"
 }
