@@ -1,10 +1,10 @@
 {
   "name" : "ELIS",
-  "timestamp" : 1548461606045,
-  "version" : "1.0",
+  "timestamp" : 1552490806141,
+  "version" : "1.0.1",
   "eiraVersion" : "3.0.0",
   "eiraMaxVersion" : "3.0.0",
   "notes" : "EIRA Library of Interoperability Specifications",
-  "url" : "https://raw.githubusercontent.com/rubinfa/test/master/iop_specs/TTL/01-ELIS-DCAT-AP_elis-BETA-catalog_v1.ttl",
-  "updateUrl" : "https://raw.githubusercontent.com/rubinfa/test/master/iop_specs/version.json"
+  "url" : "https://raw.githubusercontent.com/eiraeu/cartool/master/iop_specs/TTL/elis-catalog_v1.ttl",
+  "updateUrl" : "https://raw.githubusercontent.com/eiraeu/cartool/master/iop_specs/version.json"
 }
